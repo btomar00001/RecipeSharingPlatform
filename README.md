@@ -7,7 +7,7 @@ The **Online Recipe Sharing Platform** is a Java-based web application that enab
 ## Table of Contents
 - [Project Structure](#project-structure)
 - [Features](#features)
-- [Review and Development logs](#review-and-development-logs)
+- [Reviews and Development logs](#reviews-and-development-logs)
 - [Technology Stack](#technology-stack)
 - [Installation](#installation)
 - [Troubleshooting](#troubleshooting)
