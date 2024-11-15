@@ -96,7 +96,7 @@ This project includes two major reviews that document its development progress a
 
 ## Troubleshooting
 
-###If you encounter a 404 error on deployment, ensure:
+### If you encounter a 404 error on deployment, ensure:
 - **`The web.xml` file is configured correctly.**
 - **Static resources are correctly linked in `index.jsp`.**
 - **Tomcat server is correctly configured in Eclipse.**
