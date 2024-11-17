@@ -18,24 +18,79 @@ The **Online Recipe Sharing Platform** is a Java-based web application that enab
   
 ## Project Structure
   ```bash
-  RecipeSharingPlatform/
-├── src/
-│   ├── main/
-│   │   ├── java/
-│   │   │   └── com/recipes/
-│   │   │       ├── controller/
-│   │   │       ├── dao/
-│   │   │       └── model/
+  online-recipe-sharing-platform/
+├── backend/
+│   ├── src/
+│   │   ├── main/
+│   │   │   ├── java/
+│   │   │   │   └── com/
+│   │   │   │       └── recipeplatform/
+│   │   │   │           ├── controller/
+│   │   │   │           │   ├── AdminController.java
+│   │   │   │           │   ├── ContributorController.java
+│   │   │   │           │   └── ExplorerController.java
+│   │   │   │           ├── model/
+│   │   │   │           │   ├── User.java
+│   │   │   │           │   ├── Recipe.java
+│   │   │   │           │   ├── Category.java
+│   │   │   │           │   ├── Comment.java
+│   │   │   │           │   └── Rating.java
+│   │   │   │           ├── repository/
+│   │   │   │           │   ├── UserRepository.java
+│   │   │   │           │   ├── RecipeRepository.java
+│   │   │   │           │   └── CategoryRepository.java
+│   │   │   │           ├── service/
+│   │   │   │           │   ├── AdminService.java
+│   │   │   │           │   ├── ContributorService.java
+│   │   │   │           │   └── ExplorerService.java
+│   │   │   │           ├── dto/
+│   │   │   │           │   ├── UserDTO.java
+│   │   │   │           │   ├── RecipeDTO.java
+│   │   │   │           │   └── RatingDTO.java
+│   │   │   │           └── MainApplication.java
 │   │   ├── resources/
-│   │   └── webapp/
-│   │       ├── WEB-INF/
-│   │       │   └── web.xml
-│   │       ├── css/
-│   │       ├── js/
-│   │       ├── images/
-│   │       └── index.jsp
-├── pom.xml
-└── README.md
+│   │   │   ├── application.properties
+│   │   │   └── schema.sql
+│   └── test/
+│       ├── java/
+│       │   └── com/
+│       │       └── recipeplatform/
+│       │           ├── controller/
+│       │           │   └── AdminControllerTests.java
+│       │           ├── service/
+│       │           │   ├── AdminServiceTests.java
+│       │           │   └── ContributorServiceTests.java
+│       │           └── MainApplicationTests.java
+│       └── resources/
+│           └── test-application.properties
+│   └── pom.xml
+├── frontend/
+│   ├── public/
+│   │   ├── index.html
+│   │   ├── favicon.ico
+│   │   └── manifest.json
+│   ├── src/
+│   │   ├── components/
+│   │   │   ├── AdminDashboard.jsx
+│   │   │   ├── ContributorDashboard.jsx
+│   │   │   ├── ExplorerDashboard.jsx
+│   │   │   ├── RecipeForm.jsx
+│   │   │   ├── CommentSection.jsx
+│   │   │   └── RatingComponent.jsx
+│   │   ├── pages/
+│   │   │   ├── HomePage.jsx
+│   │   │   ├── RecipeDetailsPage.jsx
+│   │   │   ├── LoginPage.jsx
+│   │   │   └── RegisterPage.jsx
+│   │   ├── styles/
+│   │   │   └── styles.css
+│   │   ├── App.jsx
+│   │   └── index.js
+│   ├── package.json
+│   ├── .babelrc
+│   └── webpack.config.js
+├── README.md
+
  ```
 
 ## Features
