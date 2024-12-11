@@ -65,7 +65,7 @@ This project includes two major reviews that document its development progress a
 ### Steps
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/btomar/recipe-sharing-platform.git
+   git clone https://github.com/btomar/RecipeSharingPlatform.git
 
 2. **Import the project into Eclipse**:
 - ***Open Eclipse***
@@ -102,8 +102,8 @@ The MySQL database schema for this project consists of tables for users, recipes
    - `username` (VARCHAR(50), UNIQUE): Username chosen by the user.
    - `password` (VARCHAR(255)): Encrypted password.
    - `email` (VARCHAR(100), UNIQUE): Email address of the user.
-   - `created_at` (TIMESTAMP): Date and time of user account creation.
-
+   - `role` (ENUM('Admin', 'Contributor', 'Explorer')): Role of the user
+     
 ### 2. **recipes**
    - `recipe_id` (INT, Primary Key, AUTO_INCREMENT): Unique identifier for each recipe.
    - `user_id` (INT, Foreign Key): ID of the user who posted the recipe.
