@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@ page import="java.sql.*, java.io.*, javax.servlet.*, javax.servlet.http.*"%>
 <!DOCTYPE html>
@@ -110,5 +111,22 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-pzjw8f+ua7Kw1TIq0a7w5b5W/d6PToULu67zmcpt3X+WY6wHfbzjzdksw7voT5Rz"
         crossorigin="anonymous"></script>
+=======
+<html>
+<head>
+    <title>Recipe Sharing Platform</title>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/styles.css">
+
+</head>
+<body>
+    <h1>Welcome to the Recipe Sharing Platform!</h1>
+    <div>
+    	<a href="/RecipeSharingPlatform/html/login.html">Login</a>
+    	<a href="/RecipeSharingPlatform/html/register.html">Register</a>
+    	<a href="/RecipeSharingPlatform/html/profile.html">Profile</a>
+    </div>
+    <script src="${pageContext.request.contextPath}/js/script.js"></script>
+    
+>>>>>>> origin/main
 </body>
 </html>
