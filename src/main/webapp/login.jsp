@@ -10,6 +10,11 @@
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
 	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
 	crossorigin="anonymous">
+<script type="text/javascript" lang="javascript">
+	
+<%@include file="validation.js" %>
+	
+</script>
 <style>
 body {
 	background-color: #f8f9fa;
@@ -46,9 +51,9 @@ body {
 				<div class="card-body">
 					<form action="login" method="POST">
 						<div class="form-group">
-							<label for="username">Username</label> <input type="text"
-								class="form-control" id="username" name="username"
-								placeholder="Enter your username" required>
+							<label for="email">Email</label> <input type="text"
+								class="form-control" id="email" name="email"
+								placeholder="Enter your email" required>
 						</div>
 						<div class="form-group">
 							<label for="password">Password</label> <input type="password"
@@ -56,7 +61,11 @@ body {
 								placeholder="Enter your password" required>
 						</div>
 						<div class="form-group text-center">
-							<button type="submit" class="btn btn-primary btn-block">Login</button>
+							<button type="submit" class="btn btn-primary btn-block"
+								onclick="loginValidation()">Login</button>
+						</div>
+						<div class="form-group text-center">
+							<button type="reset" class="btn btn-danger btn-block">Reset</button>
 						</div>
 						<div class="form-group text-center">
 							<a href="index.jsp" class="btn btn-link">Don't have an
@@ -68,6 +77,7 @@ body {
 		</div>
 	</div>
 	<!-- Optional Bootstrap JS (for future enhancements like modals, dropdowns, etc.) -->
+
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
 		integrity="sha384-q8i/PtJzw3zfu6Fw8sCpZ+uI0D57mMDr2d+n5Cm34RU9K8CC9iVv8Sc5C2VOeXY4"
 		crossorigin="anonymous"></script>
