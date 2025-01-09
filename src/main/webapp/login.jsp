@@ -49,7 +49,7 @@ body {
 					<h4>User Login</h4>
 				</div>
 				<div class="card-body">
-					<form action="login" method="POST">
+					<form action="loginprocess" method="POST">
 						<div class="form-group">
 							<label for="email">Email</label> <input type="text"
 								class="form-control" id="email" name="email"

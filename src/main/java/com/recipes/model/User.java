@@ -7,12 +7,27 @@ public class User {
 	private String email;
 	private String password;
 	private String role;
-
+	
 	public User() {
-		super();
+		
 	}
-
+	
+	public User(String username, String email, String role) {
+		this.username = username;
+		this.email = email;
+		this.role = role;
+	}
+	
+	public User(String username, String email, String password, String role) {
+		this.username = username;
+		this.email = email;
+		this.password = password;
+		this.role = role;
+		
+	}
+	
 	public User(int id, String username, String email, String password, String role) {
+		super();
 		this.id = id;
 		this.username = username;
 		this.email = email;

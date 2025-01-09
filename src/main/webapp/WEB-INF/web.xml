@@ -3,15 +3,15 @@
 <web-app>
 	<display-name>Archetype Created Web Application</display-name>
 	<servlet>
-		<servlet-name>Home</servlet-name>
-		<display-name>Home</display-name>
+		<servlet-name>UserServlet</servlet-name>
+		<display-name>UserServlet</display-name>
 		<description></description>
-		<servlet-class>com.recipes.controller.Home</servlet-class>
+		<servlet-class>com.recipes.controller.UserServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>Home</servlet-name>
-		<url-pattern>/home</url-pattern>
+		<servlet-name>UserServlet</servlet-name>
+		<url-pattern>/</url-pattern>
 	</servlet-mapping>
-
-
+	
+	
 </web-app>
