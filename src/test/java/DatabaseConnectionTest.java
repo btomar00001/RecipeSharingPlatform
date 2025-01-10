@@ -43,12 +43,12 @@ class DatabaseConnectionTest {
     void testInvalidCredentials() {
         // Temporarily modify connection properties for this test
         String originalUser = "root"; // Replace with the user in the actual configuration
-        String originalPassword = "password"; // Replace with the password in the actual configuration
+        String originalPassword = "Ptwmjgad12@"; // Replace with the password in the actual configuration
 
         try {
             // Intentionally use incorrect credentials
             connection = DriverManager.getConnection(
-                "jdbc:mysql://localhost:3306/recipe_platform", 
+                "jdbc:mysql://localhost:3306/RecipeSharingDB", 
                 "invalidUser", 
                 "invalidPassword"
             );

@@ -2,24 +2,53 @@
 
 ## Introduction
 
-The **Online Recipe Sharing Platform** is a Java-based web application that enables users to create, share, browse, and discover a variety of recipes. The platform fosters a community where users can share culinary creations, explore others' recipes, and interact through comments and ratings. The project includes user registration and login, recipe posting, categorization, search functionality, and an admin interface for content moderation.
+The **Online Recipe Sharing Platform** is a Java-based web application that enables users to create, share, browse, and discover a variety of recipes. The platform fosters a community where users can share culinary creations, explore others' recipes, and interact through comments and ratings. The project includes user registration and login, recipe posting, categorization, search functionality, and an admin interface for content moderation.Users can also browse recipes shared by other users, leave comments, and rate recipes. The project is built using Java, Servlets, JSP, and MySQL for backend processing, with HTML, CSS, Bootstrap, and JavaScript for the frontend.
 
 ## Table of Contents
 - [Project Structure](#project-structure)
 - [Features](#features)
-- [Reviews and Development logs](#reviews-and-development-logs)
 - [Technology Stack](#technology-stack)
 - [Installation](#installation)
+- [Implementation Details](implementation-details)
 - [Troubleshooting](#troubleshooting)
 - [Usage](#usage)
 - [Database Schema](#database-schema)
-- [Review Process & Deliverables](#review-process--deliverables)
+- [Review Process & Deliverables](#review-process-deliverables)
+- [Future Enhancements](#future-enhancements)
+- [Conclusion](#conclusion)
 - [License](#license)
-  
+
 ## Project Structure
   ```bash
   online-recipe-sharing-platform/
-├── backend/
+├── pom.xml
+├── readme.md       #Project Documentation
+├── schema.sql
+├── main/
+│   ├── java/com/recipes/
+│   │   ├── dao/           # Data Access Objects
+│   │   │    └── UserDAO.java
+│   │   ├── model/         # Entity classes
+│   │   │    └── User.java
+│   │   ├── controller/    # Servlet controllers
+│   │   │    └── UserServlet.java
+│   │   └── utils/         # Utility classes
+│   │        └── DatabaseConnection.java
+│   ├── webapp/
+│   │   ├── WEB-INF/
+│   │   │    └── web.xml
+│   │   ├── edit.jsp  
+│   │   ├── index.jsp     
+│   │   ├── login.jsp
+│   │   ├── register.jsp     
+│   │   ├── user-list.jsp       
+│   │   ├──  view.jsp   
+│   │   ├── welcome.jsp     
+│   │   └── validation.js  #js validation of jsp pages        
+│   └── resources/        
+└── test/
+    ├──  UserDAOTest.java    
+    └── DatabaseConnection.java
 
  ```
 
@@ -35,16 +64,6 @@ The **Online Recipe Sharing Platform** is a Java-based web application that enab
 
 ## Reviews and Development Logs
 This project includes two major reviews that document its development progress and testing.
-
-### Review 1
-- **Focus**: Initial project setup, basic features implementation (user registration, login, and recipe posting).
-- **Testing**: Database setup, basic functionality testing of user registration and login.
-- **Issues Resolved**: SQLSyntaxErrorException, SQLIntegrityConstraintViolationException.
-
-### Review 2
-- **Focus**: Additional features, improvements, and error handling.
-- **Testing**: Thorough testing of new features, fixing deployment issues with Tomcat.
-- **Known Issues**: Issues with static file paths (HTML, CSS, JS loading) that were resolved through correct project structure and resource path configuration.
   
 ## Technology Stack
 
@@ -77,7 +96,65 @@ This project includes two major reviews that document its development progress a
 - ***Right-click on Tomcat in the Servers tab, select Add and Remove..., and add the project.***
 
 4. **Deploy the Project**:
-- ***ight-click on the project and select Run on Server to start the application.***
+- ***Right-click on the project and select Run on Server to start the application.***
+
+##Implementation Details
+###1. Setting Up the Project
+- Install JDK, Eclipse IDE, and Apache Tomcat.
+- Create a Maven project in Eclipse.
+- Set up the project structure with packages for controller, model, dao.
+
+###2. Database Connection
+**Use JDBC to connect the application to the MySQL database:**
+
+```bash
+public class DatabaseConnection {
+    public static Connection getConnection() {
+        try {
+            return DriverManager.getConnection("jdbc:mysql://localhost:3306/recipes_db", "root", "password");
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+}
+```
+
+###3. DAO Classes
+**Create DAO classes to handle database operations. For example, the RecipeDAO handles CRUD operations for recipes.**
+
+###4. Servlets
+**Implement Servlets to handle user requests. For example:**
+- `UserServlet`: Handles user login & manages recipe operations like adding or viewing recipes.
+
+### 5. JSP Pages
+Use JSP pages to dynamically display content. Example:
+
+```bash
+<c:forEach var="recipe" items="${recipes}">
+    <div>
+        <h3>${recipe.title}</h3>
+        <p>${recipe.ingredients}</p>
+    </div>
+</c:forEach>
+```
+
+### 6. Frontend Design
+- Use Bootstrap for a responsive design.
+- Include JavaScript for client-side validation.
+- Unit Testing
+- Use JUnit to test DAO methods.
+
+Example test for fetching all recipes:
+
+```bash
+@Test
+public void testGetAllRecipes() {
+    RecipeDAO dao = new RecipeDAO(DatabaseConnection.getConnection());
+    List<Recipe> recipes = dao.getAllRecipes();
+    assertNotNull(recipes);
+}
+```
 
 ## Troubleshooting
 
@@ -140,6 +217,42 @@ The MySQL database schema for this project consists of tables for users, recipes
 This schema supports the core functionality of the platform, including user management, recipe posting, ingredient and step tracking, commenting, and rating.
 
 ## Review Process & Deliverables
+
+### Review 1
+- Creating the new project with JDK & IDK setup
+- Define the Project structure
+- Design the database schema for the project 
+- Creating `MySQL` table
+- Implement jdbc for database connectivity
+- Create DAO classes for the database operations. 
+
+### Review 2
+- Design HTML templates for user management
+- Style HTML templates using CSS and Bootstrap
+- Implement JavaScript for form validation and interactivity
+
+### Review 3
+- Create and configure Servlets. 
+- Implement doGet and doPost methods. 
+- Implement user form registration and profile using Servlets. 
+- Integrate JSP with Servlets. 
+- Implement JSP pages for displaying user data.
+- Use JSTL and EL in JSP pages. 
+
+### Review 4
+- Create unit tests for service & DAO.
+- Perform a final review of the project. 
+- Prepare project documentation. 
+
+##Future Enhancements
+1. Add recipe categories for easier browsing.
+2. Allow users to upload images for recipes.
+3. Enable social sharing of recipes (e.g., share on Facebook or Twitter).
+4. Implement a rating system for recipes.
+5. Provide advanced search functionality with filters (e.g., by category, rating).
+
+##Conclusion
+The Online Recipe Sharing Platform provides a user-friendly interface for sharing and browsing recipes. With a solid backend implementation and a responsive frontend, it offers essential functionality while allowing room for future enhancements.
 
 ## License
  ```bash
