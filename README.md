@@ -98,13 +98,13 @@ This project includes two major reviews that document its development progress a
 4. **Deploy the Project**:
 - ***Right-click on the project and select Run on Server to start the application.***
 
-##Implementation Details
-###1. Setting Up the Project
+## Implementation Details
+### 1. Setting Up the Project
 - Install JDK, Eclipse IDE, and Apache Tomcat.
 - Create a Maven project in Eclipse.
 - Set up the project structure with packages for controller, model, dao.
 
-###2. Database Connection
+### 2. Database Connection
 **Use JDBC to connect the application to the MySQL database:**
 
 ```bash
@@ -120,10 +120,10 @@ public class DatabaseConnection {
 }
 ```
 
-###3. DAO Classes
+### 3. DAO Classes
 **Create DAO classes to handle database operations. For example, the RecipeDAO handles CRUD operations for recipes.**
 
-###4. Servlets
+### 4. Servlets
 **Implement Servlets to handle user requests. For example:**
 - `UserServlet`: Handles user login & manages recipe operations like adding or viewing recipes.
 
@@ -244,7 +244,7 @@ This schema supports the core functionality of the platform, including user mana
 - Perform a final review of the project. 
 - Prepare project documentation. 
 
-##Future Enhancements
+## Future Enhancements
 
 1. Add recipe categories for easier browsing.
 2. Allow users to upload images for recipes.
@@ -252,7 +252,7 @@ This schema supports the core functionality of the platform, including user mana
 4. Implement a rating system for recipes.
 5. Provide advanced search functionality with filters (e.g., by category, rating).
 
-##Conclusion
+## Conclusion
 
 The Online Recipe Sharing Platform provides a user-friendly interface for sharing and browsing recipes. With a solid backend implementation and a responsive frontend, it offers essential functionality while allowing room for future enhancements.
 
