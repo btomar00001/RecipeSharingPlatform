@@ -245,6 +245,7 @@ This schema supports the core functionality of the platform, including user mana
 - Prepare project documentation. 
 
 ##Future Enhancements
+
 1. Add recipe categories for easier browsing.
 2. Allow users to upload images for recipes.
 3. Enable social sharing of recipes (e.g., share on Facebook or Twitter).
@@ -252,6 +253,7 @@ This schema supports the core functionality of the platform, including user mana
 5. Provide advanced search functionality with filters (e.g., by category, rating).
 
 ##Conclusion
+
 The Online Recipe Sharing Platform provides a user-friendly interface for sharing and browsing recipes. With a solid backend implementation and a responsive frontend, it offers essential functionality while allowing room for future enhancements.
 
 ## License
